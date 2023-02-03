@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 )
 
@@ -11,10 +10,10 @@ func main() {
 		return
 	}
 	if f, err := os.Open(os.Args[1]); err != nil {
-		fmt.Fprintln(os.Stderr, err.Error())
+		println(os.Stderr, err.Error())
 		return
 	} else {
 		defer f.Close()
 	}
-	ioutil.ReadAll(os.Stdin)
+	io.ReadAll(os.Stdin)
 }
