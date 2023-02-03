@@ -10,7 +10,7 @@ func main() {
 		return
 	}
 	if f, err := os.Open(os.Args[1]); err != nil {
-		println(os.Stderr, err.Error())
+		println(err.Error())
 		return
 	} else {
 		defer f.Close()
